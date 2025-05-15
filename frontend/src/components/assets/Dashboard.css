@@ -1,0 +1,66 @@
+.dashboard-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.dashboard-container button {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-right: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-container button:hover {
+  background-color: #218838;
+}
+
+.dashboard-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.dashboard-container th,
+.dashboard-container td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.dashboard-container th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.dashboard-container tr:hover {
+  background-color: #f9f9f9;
+}
+
+.dashboard-container td button {
+  background-color: #007bff;
+  margin-right: 6px;
+}
+
+.dashboard-container td button:last-child {
+  background-color: #dc3545;
+}
+
+.dashboard-container td button:hover {
+  opacity: 0.85;
+}
