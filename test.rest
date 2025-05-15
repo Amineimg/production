@@ -1,0 +1,98 @@
+### REGISTER admin
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin1",
+  "password": "admin123",
+  "role": "admin"
+}
+
+###
+
+### REGISTER user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "user123",
+  "role": "user"
+}
+
+###
+
+### LOGIN admin
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin1",
+  "password": "admin123"
+}
+
+###
+
+### LOGIN user
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "user123"
+}
+
+###
+
+### GET books (as user)
+GET http://localhost:3001/books
+Authorization: Bearer {{token_user}}
+
+###
+
+### CREATE book (as admin)
+POST http://localhost:3001/books
+Content-Type: application/json
+Authorization: Bearer {{token_admin}}
+
+{
+  "title": "Clean Code",
+  "author": "Robert Martin",
+  "description": "A Handbook of Agile Software Craftsmanship",
+  "publishedDate": "2008-08-01",
+  "price": 45.99
+}
+
+
+### TRY CREATE book (as user — should fail)
+POST http://localhost:3001/books
+Content-Type: application/json
+Authorization: Bearer {{token_user}}
+
+{
+  "title": "Hacked Book",
+  "author": "Anonymous",
+  "description": "This should not be allowed",
+  "publishedDate": "2002-08-01",
+  "price": 100
+}
+
+
+###
+
+### UPDATE book (replace BOOK_ID)
+PUT http://localhost:3000/books/BOOK_ID
+Content-Type: application/json
+Authorization: Bearer {{token_admin}}
+
+{
+  "title": "Clean Code (Updated)",
+  "price": 49.99
+}
+
+
+###
+
+### DELETE book (replace BOOK_ID)
+DELETE http://localhost:3000/books/BOOK_ID
+Authorization: Bearer {{token_admin}}
